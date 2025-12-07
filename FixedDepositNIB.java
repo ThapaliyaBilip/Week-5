@@ -4,15 +4,20 @@ public class FixedDepositNIB
 {
         public static void main (String[] args)
         {
-             Scanner scanner = new Scanner(System.in);     
-             
+             Scanner scanner = new Scanner(System.in);   
+            System.out.print("Enter No of FD you want to calculate ");
+            double i = scanner.nextDouble();
+             int a =1;
+            
+            while ( a<=i ) {
+
             System.out.print("Enter deposit amount (minimum 1000): ");
             double P = scanner.nextDouble();
             
             System.out.print("Enter annual interest rate (8–12): ");
             double AnnualRate = scanner.nextDouble();
             
-            System.out.print("Enter aDuration rate (1-5): ");
+            System.out.print("Enter Duration (years) (1-5): ");
             double years = scanner.nextDouble();
             
             if(P<1000)
@@ -25,7 +30,7 @@ public class FixedDepositNIB
                System.out.println("Please keep Intrest rate with in range");
 
             }
-             if(AnnualRate < 1 || AnnualRate > 5)
+             if(years < 1 || years > 5)
             {
                System.out.println("we don't allow FD to exceed 5 years and below 1 year");
 
@@ -48,5 +53,10 @@ public class FixedDepositNIB
             System.out.println("Processing fee(0.5%):"+Fee);
             System.out.println("Final Amount Received:"+FinalAmount);
             System.out.println("----------------------------\n");
-            }
+            a++;
+        }
+
+        System.out.println("Thank you!");
+       
+        }
 }
